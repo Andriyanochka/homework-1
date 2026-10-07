@@ -23,19 +23,20 @@ let tasks = [
     }
 ];
 
-let nextId = 4;
+let nextId = tasks.length;
 
-function addTask(title) {
+function addTask(title, priority, dueDate) {
     if (!title || title.trim() === '') {
         console.log('Error: Task title cannot be empty.');
         return;
     }
+    
     const newTask = {
         id: nextId++,
         title: title,
         completed: false,
-        priority: 'medium',
-        dueDate: '2026-10-15'
+        priority: priority,
+        dueDate: dueDate
     };
     tasks.push(newTask);
 }
